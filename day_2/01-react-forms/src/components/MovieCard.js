@@ -1,0 +1,12 @@
+function MovieCard({ movie, deleteFunc }) {
+  return(
+    <div className='MovieCard'>
+    <h3>{movie.title}</h3>
+    <p>Director: {movie.director}</p>
+    <p>Rating: {movie.IMDBRating}</p>
+    <button onClick={() => deleteFunc(movie._id)} className='btn-delete'>Delete</button>
+  </div>
+  )
+}
+
+export default MovieCard;

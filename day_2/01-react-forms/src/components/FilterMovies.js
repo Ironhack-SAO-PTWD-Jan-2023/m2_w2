@@ -1,0 +1,27 @@
+import { useState } from "react";
+
+function FilterMovies({ filterMovieList }) {
+  const [ firstLetter, setFirstLetter ] = useState('All');
+
+  const handleSelect = (e) => {
+    setFirstLetter(e.target.value);
+    filterMovieList(e.target.value)
+  }
+  
+
+  return (
+    <div className='FilterMovies'>
+      <label>Show movies by first letter:</label>
+      <select value={firstLetter} onChange={handleSelect}>
+        <option value='All'>All</option>
+        <option value='a'>A</option>
+        <option value='b'>B</option>
+        <option value='c'>C</option>
+        <option value='d'>D</option>
+        <option value='e'>E</option>
+      </select>
+    </div>
+  )
+}
+
+export default FilterMovies;
